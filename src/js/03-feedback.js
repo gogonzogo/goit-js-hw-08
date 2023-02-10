@@ -1,12 +1,12 @@
+import throttle from "lodash.throttle";
+
 const ref = {
   form: document.querySelector('form'),
 }
 
-let throttledOnInput = _.throttle(handleInput, 500);
+ref.form.addEventListener('input', throttle(onFormInput, 500));
 
-ref.form.addEventListener("input", onInput);
-
-function onInput(event) {
+function onFormInput(event) {
   event.preventDefault();
   
 
