@@ -8,27 +8,18 @@ player.on('timeupdate', function (currentTime) {
   localStorage.setItem("videoplayer-current-time", vimeoCurrentTime);
 });
 
+
 try {
   const currentTimeObj = localStorage.getItem("videoplayer-current-time");
   const parsedCurrentTime = JSON.parse(currentTimeObj);
-  const currentTimeSeconds = parsedCurrentTime.seconds;
-  console.log(currentTimeSeconds);
+  var currentTimeSeconds = parsedCurrentTime.seconds;
 } catch (error) {
   console.log(error.name);
   console.log(error.message);
 };
 
-player.setCurrentTime(currentTimeSeconds).then(function (seconds) {
-  // seconds = the actual time that the player seeked to
-}).catch(function (error) {
-  switch (error.name) {
-    case 'RangeError':
-      // the time was less than 0 or greater than the video’s duration
-      break;
 
-    default:
-      // some other error occurred
-      break;
-  }
-});
+console.log(currentTimeSeconds);
+player.setCurrentTime(currentTimeSeconds);
+
 
