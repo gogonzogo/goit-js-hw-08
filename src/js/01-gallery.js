@@ -1,13 +1,7 @@
-"use strict";
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 // Add imports above this line
-import { galleryItems } from './gallery-items';
-// Change code below this line
-
-// import SimpleLightbox from "simplelightbox";
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
@@ -35,7 +29,7 @@ function handleClick(e) {
     return;
   };
 
-  let showLightbox = new SimpleLightbox('.gallery a');
+  let showLightbox = new SimpleLightbox('.gallery a', {captionsData:"alt", captionDelay: 250, captionPosition: "bottom"});
 
   showLightbox.on('show.simplelightbox', function () { });
 };
