@@ -19,7 +19,5 @@ function onFormInput(event) {
       "message": `${message.value}`, 
       }
   console.log(formInput);
-  
-  
 
 }
