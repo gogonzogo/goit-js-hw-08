@@ -5,7 +5,6 @@ const iframe = document.querySelector('iframe');
 const player = new Vimeo.Player(iframe);
 const STORAGE_KEY = "videoplayer-current-time";
 
-
 player.on('timeupdate', throttle(handlePlay, 1000))
 setCurrentTime();
 
@@ -19,7 +18,7 @@ function setCurrentTime() {
     return;
   }
   player.setCurrentTime(currentTimeObj);
-}
+};
 
 
 

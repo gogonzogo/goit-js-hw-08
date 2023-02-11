@@ -34,6 +34,7 @@ function handleSubmit(evt) {
   evt.preventDefault();
   console.log(localStorage);
   evt.currentTarget.reset();
+  localStorage.clear();
 }
 
 
