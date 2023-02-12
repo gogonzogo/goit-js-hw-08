@@ -34,7 +34,7 @@ function handleSubmit(evt) {
   evt.preventDefault();
   console.log(localStorage);
   evt.currentTarget.reset();
-  localStorage.clear();
+  localStorage.removeItem(STORAGE_FORM_KEY);
 }
 
 
