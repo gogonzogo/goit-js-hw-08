@@ -12,10 +12,10 @@ ref.form.addEventListener('input', throttle(onFormInput, 500));
 function onFormInput(event) {
   let formInputs = {
     "input": `${ref.email.value}`,
-    "textarea": `${ref.message.value}`, 
-  }
+    "textarea": `${ref.message.value}`,
+  };
   localStorage.setItem(STORAGE_FORM_KEY, JSON.stringify(formInputs));
-}
+};
 
 function fillForm() {
   const storedFormData = localStorage.getItem(STORAGE_FORM_KEY);
@@ -26,7 +26,7 @@ function fillForm() {
     ref.email.value = parsedFormData.input;
     ref.message.value = parsedFormData.textarea;
   };
-}
+};
 
 ref.form.addEventListener('submit', handleSubmit);
 
@@ -35,7 +35,6 @@ function handleSubmit(evt) {
   console.log(localStorage);
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_FORM_KEY);
-}
-
+};
 
 fillForm();
