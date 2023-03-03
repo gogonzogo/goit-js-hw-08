@@ -11,7 +11,9 @@ const ref = {
 
 function galleryMarkup(array) {
   return array.map((item) =>
-    `<a class="gallery__link" href="${item.original}"><img class="gallery__image"src="${item.preview}" alt="${item.description}" width="340"/></a>`).join('');
+    `<a class="gallery__link" href="${item.original}">
+    <img class="gallery__image"src="${item.preview}" 
+    alt="${item.description}" width="340"/></a>`).join('');
 };
 ref.galleryList.insertAdjacentHTML("afterbegin", galleryMarkup(galleryItems));
 
